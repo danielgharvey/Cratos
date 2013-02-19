@@ -1,4 +1,6 @@
-
+/*
+ * A general particle class.
+ */
 template<unsigned DIM>
 class Particle
 {
