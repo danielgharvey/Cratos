@@ -6,17 +6,15 @@ class Particle
 {
 private:
 
-  unsigned mIndex;
+	std::vector<double> mLocation;
+
+	unsigned mIndex;
 
 public:
 
-  Particle()
-  {
-    mIndex = 0;
-  }
+	Particle(unsigned index, std::vector<double> location);
 
-  unsigned GetIndex()
-  {
-    return mIndex;
-  }
+	const unsigned GetIndex() const;
+
+	const std::vector<double>& rGetLocation();
 };

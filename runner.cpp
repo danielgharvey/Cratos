@@ -5,6 +5,7 @@
 #endif
 
 #define _CXXTEST_HAVE_STD
+#define _CXXTEST_HAVE_EH
 #include <cxxtest/TestListener.h>
 #include <cxxtest/TestTracker.h>
 #include <cxxtest/TestRunner.h>
@@ -24,11 +25,11 @@ bool suite_TestParticle_init = false;
 static TestParticle suite_TestParticle;
 
 static CxxTest::List Tests_TestParticle = { 0, 0 };
-CxxTest::StaticSuiteDescription suiteDescription_TestParticle( "Particle/test/TestParticle.hpp", 5, "TestParticle", suite_TestParticle, Tests_TestParticle );
+CxxTest::StaticSuiteDescription suiteDescription_TestParticle( "Particle/test/TestParticle.hpp", 6, "TestParticle", suite_TestParticle, Tests_TestParticle );
 
 static class TestDescription_suite_TestParticle_TestConstructor : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_TestParticle_TestConstructor() : CxxTest::RealTestDescription( Tests_TestParticle, suiteDescription_TestParticle, 9, "TestConstructor" ) {}
+ TestDescription_suite_TestParticle_TestConstructor() : CxxTest::RealTestDescription( Tests_TestParticle, suiteDescription_TestParticle, 10, "TestConstructor" ) {}
  void runTest() { suite_TestParticle.TestConstructor(); }
 } testDescription_suite_TestParticle_TestConstructor;
 
