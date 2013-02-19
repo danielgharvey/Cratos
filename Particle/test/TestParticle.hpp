@@ -1,4 +1,5 @@
 // Test Particle
+
 #include <cxxtest/TestSuite.h>
 #include "Particle.hpp"
 
