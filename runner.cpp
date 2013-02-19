@@ -5,6 +5,7 @@
 #endif
 
 #define _CXXTEST_HAVE_STD
+#define _CXXTEST_HAVE_EH
 #include <cxxtest/TestListener.h>
 #include <cxxtest/TestTracker.h>
 #include <cxxtest/TestRunner.h>
@@ -18,19 +19,19 @@ int main( int argc, char *argv[] ) {
     status = CxxTest::Main<CxxTest::ErrorPrinter>( tmp, argc, argv );
     return status;
 }
-bool suite_MyTestSuite1_init = false;
-#include "MyTestSuite1.h"
+bool suite_TestParticle_init = false;
+#include "TestParticle.hpp"
 
-static MyTestSuite1 suite_MyTestSuite1;
+static TestParticle suite_TestParticle;
 
-static CxxTest::List Tests_MyTestSuite1 = { 0, 0 };
-CxxTest::StaticSuiteDescription suiteDescription_MyTestSuite1( "MyTestSuite1.h", 4, "MyTestSuite1", suite_MyTestSuite1, Tests_MyTestSuite1 );
+static CxxTest::List Tests_TestParticle = { 0, 0 };
+CxxTest::StaticSuiteDescription suiteDescription_TestParticle( "TestParticle.hpp", 5, "TestParticle", suite_TestParticle, Tests_TestParticle );
 
-static class TestDescription_suite_MyTestSuite1_testAddition : public CxxTest::RealTestDescription {
+static class TestDescription_suite_TestParticle_TestConstructor : public CxxTest::RealTestDescription {
 public:
- TestDescription_suite_MyTestSuite1_testAddition() : CxxTest::RealTestDescription( Tests_MyTestSuite1, suiteDescription_MyTestSuite1, 7, "testAddition" ) {}
- void runTest() { suite_MyTestSuite1.testAddition(); }
-} testDescription_suite_MyTestSuite1_testAddition;
+ TestDescription_suite_TestParticle_TestConstructor() : CxxTest::RealTestDescription( Tests_TestParticle, suiteDescription_TestParticle, 9, "TestConstructor" ) {}
+ void runTest() { suite_TestParticle.TestConstructor(); }
+} testDescription_suite_TestParticle_TestConstructor;
 
 #include <cxxtest/Root.cpp>
 const char* CxxTest::RealWorldDescription::_worldName = "cxxtest";
